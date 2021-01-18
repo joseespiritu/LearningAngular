@@ -11,6 +11,6 @@
 
 <div class="row row-cols-1 row-cols-md-3 g-4">
     <!-- *ngFor="let heroe of heroes; let i = index" -->
-    <app-heroe-tarjeta (heroeSeleccionado)="verHeroe($event)" [heroe]="foo" [index]="i" *ngFor="let foo of heroes; let i = index"></app-heroe-tarjeta>
+    <app-heroe-tarjeta (heroeSeleccionado)="verHeroe($event)" [heroe]="foo" [index]="foo.idx" *ngFor="let foo of heroes"></app-heroe-tarjeta>
     
 </div>
