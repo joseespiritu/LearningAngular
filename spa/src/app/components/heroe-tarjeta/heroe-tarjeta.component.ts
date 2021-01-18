@@ -1,5 +1,5 @@
 import { Route } from '@angular/compiler/src/core';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from "@angular/router";
 
 @Component({
@@ -11,14 +11,22 @@ export class HeroeTarjetaComponent implements OnInit {
   @Input() heroe: any = {};
   @Input() index: number = 0;
 
-  constructor(private router: Router) { }
+  @Output() heroeSeleccionado: EventEmitter<number>;
+
+  constructor(private router: Router) { 
+    this.heroeSeleccionado = new EventEmitter;
+  }
 
   ngOnInit(): void {
   }
 
   verHeroe(){
+    //Metodo Input
     console.log(this.index);
     this.router.navigate( ['/heroe', this.index] );
+
+    //Usando el metodo Output
+    /* this.heroeSeleccionado.emit( this.index ); */
   }
 
 }
