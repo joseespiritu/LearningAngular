@@ -1,0 +1,79 @@
+<h1>Pipes <small>Angular</small></h1>
+<hr>
+
+<div class="row">
+  <div class="col">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th> Variable </th>
+          <th> Pipe</th>
+          <th> Salida </th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td> {{ nombre }}</td>
+          <td>  uppercase </td>
+          <td> {{ nombre | uppercase }}</td>
+        </tr>
+
+        <tr>
+          <td> {{ nombre }}</td>
+          <td>  lowercase </td>
+          <td> {{ nombre | lowercase }}</td>
+        </tr>
+
+        <tr>
+          <td> {{ nombre }}</td>
+          <td>  slice:2:5 </td>
+          <td> {{ nombre | slice:2:5 }}</td>
+        </tr>
+
+        <tr>
+          <td> {{ PI }}</td>
+          <td>  number:'3.0-0' </td>
+          <td> {{ PI | number:'3.0-0' }}</td>
+        </tr>
+
+        <tr>
+          <td> {{ PI }}</td>
+          <td>  number:'.0-2' </td>
+          <td> {{ PI | number:'.0-2' }}</td>
+        </tr>
+
+        <tr>
+          <td> {{ porcentaje }}</td>
+          <td>  percent </td>
+          <td> {{ porcentaje | percent }}</td>
+        </tr>
+
+        <tr>
+          <td> {{ porcentaje }}</td>
+          <td>  percent:'2.2-2' </td>
+          <td> {{ porcentaje | percent:'2.2-2' }}</td>
+        </tr>
+        
+        <tr>
+          <td> {{ salario }}</td>
+          <td>  currency:'MXN' </td>
+          <td> {{ salario | currency:'MXN' }}</td>
+        </tr>
+
+        <tr>
+          <td> {{ salario }}</td>
+          <td>  currency:'EUR ':'symbol-narrow':'.0-0' </td>
+          <td> {{ salario | currency:'EUR ':'symbol-narrow':'.0-0' }}</td>
+        </tr>
+
+      </tbody>
+    </table>
+
+    <h4>Slices</h4>
+    <ul>
+      <li *ngFor="let item of arreglo | slice:5:20">{{ item }}</li>
+    </ul>
+
+  </div>
+</div>
